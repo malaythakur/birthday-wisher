@@ -48,7 +48,7 @@ def check_birthdays():
 
 # Schedule the script to run daily at 00:01 (12:01 AM)
 def start_schedule():
-    schedule.every().day.at("04:17").do(check_birthdays)
+    schedule.every().day.at("04:45").do(check_birthdays)
     
     while True:
         schedule.run_pending()
