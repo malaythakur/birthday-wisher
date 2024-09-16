@@ -1,21 +1,22 @@
-name: run birthday_wisher_with_scheduling.py
+name: Run Birthday Wisher
 
 on:
   schedule:
-    - cron: '15 23 * * *'  # Runs at 23:15 UTC (4:45 AM IST)
+    - cron: '42 23 * * *'  # Runs at 23:42 UTC every day (adjusted from 5:12 AM IST)
+  workflow_dispatch:  # Allows manual trigger from the GitHub Actions tab
 
 jobs:
-  build:
+  run-script:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout repo content
+    - name: Checkout repository
       uses: actions/checkout@v3
 
     - name: Set up Python
       uses: actions/setup-python@v4
       with:
-        python-version: '3.12.5' 
+        python-version: '3.12'  # Specify the Python version you need
 
     - name: Install dependencies
       run: |
@@ -29,16 +30,3 @@ jobs:
         TWILIO_WHATSAPP_NUMBER: ${{ secrets.TWILIO_WHATSAPP_NUMBER }}
       run: |
         python birthday_wisher_with_scheduling.py
-
-    - name: commit files
-      run: |
-          git config --local user.email "action@github.com"
-          git config --local user.name "GitHub Action"
-          git add -A
-          git diff-index --quiet HEAD || (git commit -a -m "updated logs" --allow-empty)
-
-    - name: push changes
-      uses: ad-m/github-push-action@v0.6.0
-      with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          branch: master 
