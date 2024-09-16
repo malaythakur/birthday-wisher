@@ -2,7 +2,7 @@ name: Run Birthday Wisher
 
 on:
   schedule:
-    - cron: '33 22 * * *'  # Runs at 22:10 UTC every day (adjusted from 3:40 AM IST)
+    - cron: '47 22 * * *'  # Runs at 22:10 UTC every day (adjusted from 3:40 AM IST)
   workflow_dispatch:  # Allows manual trigger from the GitHub Actions tab
 
 jobs:
