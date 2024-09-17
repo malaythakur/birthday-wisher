@@ -58,7 +58,7 @@ Follow these steps to set up and run Birthday Wisher locally or through GitHub A
 
    ```plaintext
    Name,Birthday,PhoneNumber
-   John Doe,09-18,+1234567890
+   Malay Thakur,09-18,918969401606
    ```
 
    - **Name**: Friend’s name
@@ -75,7 +75,9 @@ python birthday_wisher.py
 
 ### 📅 GitHub Actions Setup
 
-1. **Configure the Workflow**
+1. **Workflow Configuration:**
+
+   ![GitHub Actions Workflow Screenshot](workflows.png)
 
    The GitHub Actions workflow is set to run daily at 10:30 AM IST (05:00 AM UTC). This ensures automatic checks and message dispatches.
 
@@ -93,6 +95,14 @@ Once configured, the script will:
 
 - Check for any birthdays listed for the current date.
 - Send a WhatsApp message to friends whose birthdays match.
+
+**Example Message:**
+
+![Example WhatsApp Message](example.png)
+
+Note: The message content shown is an example and was sent to myself for testing purposes.
+
+
 
 ### 💡 Contributing
 
