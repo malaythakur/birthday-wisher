@@ -2,12 +2,8 @@ from twilio.rest import Client
 import pandas as pd
 import datetime
 import os
-from dotenv import load_dotenv
 
-# Load environment variables from .env file
-load_dotenv()
-
-# Twilio credentials
+# Twilio credentials from environment variables
 account_sid = os.getenv('TWILIO_ACCOUNT_SID')
 auth_token = os.getenv('TWILIO_AUTH_TOKEN')
 twilio_whatsapp_number = os.getenv('TWILIO_WHATSAPP_NUMBER')
