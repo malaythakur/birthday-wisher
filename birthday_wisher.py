@@ -10,7 +10,7 @@ twilio_whatsapp_number = os.getenv('TWILIO_WHATSAPP_NUMBER')
 
 def send_whatsapp_message(to_number, message):
     try:
-        # Remove the '+' if present and add the 'whatsapp:' prefix
+        # Ensure the 'whatsapp:' prefix is correctly applied
         from_number = f'whatsapp:{twilio_whatsapp_number}'
         to_number = f'whatsapp:{to_number}'
         
@@ -24,6 +24,7 @@ def send_whatsapp_message(to_number, message):
         print(f"Message SID: {message_response.sid}")
     except Exception as e:
         print(f"Failed to send message to {to_number}: {e}")
+
 
 def check_birthdays():
     print("Checking birthdays...")
